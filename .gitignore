@@ -11,3 +11,4 @@ weights/*.npy
 .claude/
 # Keep skills tracked
 .skills/
+.venv/
