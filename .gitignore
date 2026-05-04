@@ -9,6 +9,5 @@ weights/*.npy
 *.egg-info/
 .env
 .claude/
-# Keep skills tracked
-.skills/
 .venv/
+.pytest_cache/
