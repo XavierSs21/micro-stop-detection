@@ -11,3 +11,4 @@ weights/*.npy
 .claude/
 .venv/
 .pytest_cache/
+CLAUDE.md
