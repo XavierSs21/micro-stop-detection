@@ -12,3 +12,4 @@ weights/*.npy
 .venv/
 .pytest_cache/
 CLAUDE.md
+.skills/
