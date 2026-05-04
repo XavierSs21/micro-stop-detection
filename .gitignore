@@ -10,4 +10,4 @@ weights/*.npy
 .env
 .claude/
 # Keep skills tracked
-!.skills/
+.skills/
