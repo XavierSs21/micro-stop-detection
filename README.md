@@ -182,7 +182,6 @@ micro-stop-detection/
 
 ### Prerequisitos
 - Python 3.10 o superior
-- WSL2 con Debian (en Windows) o Linux nativo
 
 ### Instalación
 
@@ -193,9 +192,17 @@ micro-stop-detection/
    ```
 
 2. **Crear el virtual environment**:
+
+   Linux / WSL:
    ```bash
    python3 -m venv .venv
-   source .venv/bin/activate  # En Windows: .venv\Scripts\activate
+   source .venv/bin/activate
+   ```
+
+   Windows (cmd / PowerShell):
+   ```bat
+   python -m venv .venv
+   .venv\Scripts\activate
    ```
 
 3. **Instalar dependencias**:
@@ -203,13 +210,6 @@ micro-stop-detection/
    pip install --upgrade pip
    pip install numpy scikit-learn pandas matplotlib seaborn jupyter nbformat pytest
    ```
-
-### En WSL (Windows)
-
-Todos los comandos deben ejecutarse con el patrón:
-```bash
-wsl -d Debian bash -c "PYTHONPATH=src .venv/bin/python3 <comando>"
-```
 
 ---
 
@@ -261,12 +261,19 @@ print(f"MSE Loss: {loss:.4f}")
 
 ### Ejecutar todas las pruebas
 
+Linux / WSL:
 ```bash
-# Local
 PYTHONPATH=src python3 -m pytest tests/test_neural_engine.py -v
+```
 
-# WSL
-wsl -d Debian bash -c "PYTHONPATH=src .venv/bin/python3 -m pytest tests/test_neural_engine.py -v"
+Windows (cmd):
+```bat
+set PYTHONPATH=src && python -m pytest tests/test_neural_engine.py -v
+```
+
+Windows (PowerShell):
+```powershell
+$env:PYTHONPATH="src"; python -m pytest tests/test_neural_engine.py -v
 ```
 
 ### Pruebas incluidas (6 tests)
@@ -323,12 +330,14 @@ target = [
 
 ### Generar dataset
 
+Linux / WSL:
 ```bash
-# Ejecutar el notebook
 jupyter notebook notebook/dataset.ipynb
+```
 
-# O directamente (python)
-wsl -d Debian bash -c "PYTHONPATH=src .venv/bin/python3 notebook/dataset.ipynb"
+Windows:
+```bat
+jupyter notebook notebook\dataset.ipynb
 ```
 
 Salida: `data/industrial_dataset.csv`
