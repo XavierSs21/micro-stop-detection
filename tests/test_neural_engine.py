@@ -1,12 +1,7 @@
 """pytest test suite for the neural_engine module — 6 tests."""
 
-import sys
-import os
-
 import numpy as np
 import pytest
-
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
 from neural_engine.lstm_cell import LSTMCell, AdamOptimizer
 from neural_engine.attention import Attention
@@ -132,11 +127,11 @@ def test_extract_context_contract():
 
 def test_no_framework_imports():
     forbidden = ["keras", "torch", "tensorflow", "jax"]
-    src_dir = os.path.join(os.path.dirname(__file__), "..", "src", "neural_engine")
+    src_dir = "src/neural_engine"
     target_files = ["lstm_cell.py", "attention.py", "prediction_head.py"]
 
     for fname in target_files:
-        fpath = os.path.join(src_dir, fname)
+        fpath = f"{src_dir}/{fname}"
         with open(fpath, "r", encoding="utf-8") as f:
             source = f.read()
         for lib in forbidden:
