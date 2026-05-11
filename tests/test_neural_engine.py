@@ -137,3 +137,33 @@ def test_no_framework_imports():
         for lib in forbidden:
             assert lib not in source, \
                 f"Forbidden import '{lib}' found in {fname}"
+
+
+# ---------------------------------------------------------------------------
+# Test 7 — End-to-end training loop
+# ---------------------------------------------------------------------------
+
+def test_end_to_end_training():
+    np.random.seed(42)
+    lstm = LSTMCell(4, 32)
+    att = Attention(32)
+    ph = PredictionHead(32)
+    opt = AdamOptimizer(lr=1e-3)
+
+    X = np.random.randn(8, 20, 4)
+    y_time = np.random.uniform(0, 50, size=8)
+
+    losses = []
+    for _ in range(10):
+        all_h, _ = lstm.forward(X)
+        context, _ = att.forward(all_h)
+        pred = ph.forward(context)
+        losses.append(ph.loss(pred, y_time))
+
+        dL_dcontext = ph.backward(pred, y_time)
+        dL_dall_h = att.backward(dL_dcontext)
+        grads = lstm.backward(dL_dall_h)
+        lstm.update(grads, opt)
+
+    assert losses[-1] < losses[0], \
+        f"Loss did not decrease: {losses[0]:.4f} -> {losses[-1]:.4f}"

@@ -53,12 +53,15 @@ class PredictionHead:
         """
         return float(np.mean((pred - y_time) ** 2))
 
-    def backward(self, pred: np.ndarray, y_time: np.ndarray) -> None:
-        """Backpropagate MSE loss and update weights via Adam.
+    def backward(self, pred: np.ndarray, y_time: np.ndarray) -> np.ndarray:
+        """Backpropagate MSE loss, update weights via Adam, and return upstream gradient.
 
         Args:
             pred:   Predicted steps, shape (batch,).
             y_time: Ground-truth steps, shape (batch,).
+
+        Returns:
+            Gradient w.r.t. context, shape (batch, hidden_size).
         """
         context = self._cache["context"]
         linear = self._cache["linear"].flatten()
@@ -75,11 +78,16 @@ class PredictionHead:
         dW = np.clip(dW, -GRAD_CLIP, GRAD_CLIP)
         db = np.clip(db, -GRAD_CLIP, GRAD_CLIP)
 
+        # propagate before updating weights
+        dL_dcontext = dL_dlinear @ self.W.T                     # (batch, hidden_size)
+
         params = {"W": self.W, "b": self.b}
         grads = {"W": dW, "b": db}
         updated = self._optimizer.update(params, grads)
         self.W = updated["W"]
         self.b = updated["b"]
+
+        return dL_dcontext
 
 
 # ---------------------------------------------------------------------------
