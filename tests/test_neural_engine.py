@@ -1,4 +1,4 @@
-"""pytest test suite for the neural_engine module — 6 tests."""
+"""pytest test suite for the neural_engine module."""
 
 import numpy as np
 import pytest
@@ -167,3 +167,20 @@ def test_end_to_end_training():
 
     assert losses[-1] < losses[0], \
         f"Loss did not decrease: {losses[0]:.4f} -> {losses[-1]:.4f}"
+
+
+# ---------------------------------------------------------------------------
+# Test 8 — Canonical pipeline.extract_context contract
+# ---------------------------------------------------------------------------
+
+def test_pipeline_extract_context_contract():
+    from pipeline import extract_context as canonical_extract_context
+
+    np.random.seed(4)
+    X = np.random.randn(8, 20, 4).astype(np.float32)
+    context = canonical_extract_context(X)
+
+    assert context.shape == (8, 32), \
+        f"Expected (8, 32), got {context.shape}"
+    assert not np.any(np.isnan(context)), "NaN in context"
+    assert not np.any(np.isinf(context)), "Inf in context"
