@@ -1,4 +1,5 @@
 industrial_dataset.csv
+notebook/sandbox.ipynb
 *.npy
 *_executed.ipynb
 *.png
