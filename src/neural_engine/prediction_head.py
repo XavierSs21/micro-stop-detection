@@ -2,12 +2,8 @@
 
 import numpy as np
 
-try:
-    from neural_engine.lstm_cell import AdamOptimizer
-except ImportError:
-    from lstm_cell import AdamOptimizer  # direct script execution
-
-GRAD_CLIP = 5.0
+from neural_engine.optimizer import AdamOptimizer
+from neural_engine.activations import GRAD_CLIP
 
 
 class PredictionHead:
@@ -88,25 +84,3 @@ class PredictionHead:
         self.b = updated["b"]
 
         return dL_dcontext
-
-
-# ---------------------------------------------------------------------------
-# Smoke test
-# ---------------------------------------------------------------------------
-
-if __name__ == "__main__":
-    np.random.seed(7)
-
-    ph = PredictionHead(hidden_size=32)
-    context = np.random.randn(16, 32).astype(np.float32)
-    y_time = np.random.uniform(0, 50, size=16)
-
-    losses = []
-    for _ in range(20):
-        pred = ph.forward(context)
-        losses.append(ph.loss(pred, y_time))
-        ph.backward(pred, y_time)
-
-    assert losses[-1] < losses[0], \
-        f"Loss did not decrease: {losses[0]:.4f} -> {losses[-1]:.4f}"
-    print("PredictionHead OK ✓")
