@@ -1,0 +1,823 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "__init__.py",
+      "source_location": "L1",
+      "id": "init_py",
+      "community": 9,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "attention.py",
+      "file_type": "code",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L1",
+      "id": "neural_engine_attention_py",
+      "community": 0,
+      "norm_label": "attention.py"
+    },
+    {
+      "label": "Attention",
+      "file_type": "code",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L13",
+      "id": "neural_engine_attention_attention",
+      "community": 0,
+      "norm_label": "attention"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L20",
+      "id": "neural_engine_attention_attention_init",
+      "community": 0,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".forward()",
+      "file_type": "code",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L27",
+      "id": "neural_engine_attention_attention_forward",
+      "community": 5,
+      "norm_label": ".forward()"
+    },
+    {
+      "label": ".backward()",
+      "file_type": "code",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L48",
+      "id": "neural_engine_attention_attention_backward",
+      "community": 0,
+      "norm_label": ".backward()"
+    },
+    {
+      "label": "Softmax attention layer over LSTM hidden states \u2014 numpy only.",
+      "file_type": "rationale",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L1",
+      "id": "neural_engine_attention_rationale_1",
+      "community": 0,
+      "norm_label": "softmax attention layer over lstm hidden states \u2014 numpy only."
+    },
+    {
+      "label": "Softmax attention that condenses a sequence of hidden states into a context vect",
+      "file_type": "rationale",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L14",
+      "id": "neural_engine_attention_rationale_14",
+      "community": 0,
+      "norm_label": "softmax attention that condenses a sequence of hidden states into a context vect"
+    },
+    {
+      "label": "Compute attention-weighted context vector.          Args:             all_h: LST",
+      "file_type": "rationale",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L28",
+      "id": "neural_engine_attention_rationale_28",
+      "community": 5,
+      "norm_label": "compute attention-weighted context vector.          args:             all_h: lst"
+    },
+    {
+      "label": "Backpropagate through attention, update W_a via Adam.          Args:",
+      "file_type": "rationale",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L49",
+      "id": "neural_engine_attention_rationale_49",
+      "community": 0,
+      "norm_label": "backpropagate through attention, update w_a via adam.          args:"
+    },
+    {
+      "label": "lstm_cell.py",
+      "file_type": "code",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L1",
+      "id": "neural_engine_lstm_cell_py",
+      "community": 3,
+      "norm_label": "lstm_cell.py"
+    },
+    {
+      "label": "sigmoid()",
+      "file_type": "code",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L10",
+      "id": "neural_engine_lstm_cell_sigmoid",
+      "community": 3,
+      "norm_label": "sigmoid()"
+    },
+    {
+      "label": "softmax()",
+      "file_type": "code",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L23",
+      "id": "neural_engine_lstm_cell_softmax",
+      "community": 5,
+      "norm_label": "softmax()"
+    },
+    {
+      "label": "AdamOptimizer",
+      "file_type": "code",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L41",
+      "id": "neural_engine_lstm_cell_adamoptimizer",
+      "community": 2,
+      "norm_label": "adamoptimizer"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L51",
+      "id": "neural_engine_lstm_cell_adamoptimizer_init",
+      "community": 2,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L66",
+      "id": "neural_engine_lstm_cell_adamoptimizer_update",
+      "community": 2,
+      "norm_label": ".update()"
+    },
+    {
+      "label": "LSTMCell",
+      "file_type": "code",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L97",
+      "id": "neural_engine_lstm_cell_lstmcell",
+      "community": 1,
+      "norm_label": "lstmcell"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L107",
+      "id": "neural_engine_lstm_cell_lstmcell_init",
+      "community": 1,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".forward()",
+      "file_type": "code",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L122",
+      "id": "neural_engine_lstm_cell_lstmcell_forward",
+      "community": 3,
+      "norm_label": ".forward()"
+    },
+    {
+      "label": ".backward()",
+      "file_type": "code",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L178",
+      "id": "neural_engine_lstm_cell_lstmcell_backward",
+      "community": 1,
+      "norm_label": ".backward()"
+    },
+    {
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L239",
+      "id": "neural_engine_lstm_cell_lstmcell_update",
+      "community": 1,
+      "norm_label": ".update()"
+    },
+    {
+      "label": "LSTM cell implementation with BPTT and Adam optimizer \u2014 numpy only.",
+      "file_type": "rationale",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L1",
+      "id": "neural_engine_lstm_cell_rationale_1",
+      "community": 3,
+      "norm_label": "lstm cell implementation with bptt and adam optimizer \u2014 numpy only."
+    },
+    {
+      "label": "Numerically stable sigmoid.      Args:         x: Input array, any shape.      R",
+      "file_type": "rationale",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L11",
+      "id": "neural_engine_lstm_cell_rationale_11",
+      "community": 3,
+      "norm_label": "numerically stable sigmoid.      args:         x: input array, any shape.      r"
+    },
+    {
+      "label": "Softmax along a given axis.      Args:         x: Input array, any shape.",
+      "file_type": "rationale",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L24",
+      "id": "neural_engine_lstm_cell_rationale_24",
+      "community": 5,
+      "norm_label": "softmax along a given axis.      args:         x: input array, any shape."
+    },
+    {
+      "label": "Adam optimizer for parameter updates.      Args:         lr: Learning rate.",
+      "file_type": "rationale",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L42",
+      "id": "neural_engine_lstm_cell_rationale_42",
+      "community": 2,
+      "norm_label": "adam optimizer for parameter updates.      args:         lr: learning rate."
+    },
+    {
+      "label": "Apply one Adam step.          Args:             params: Dict mapping param name",
+      "file_type": "rationale",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L67",
+      "id": "neural_engine_lstm_cell_rationale_67",
+      "community": 2,
+      "norm_label": "apply one adam step.          args:             params: dict mapping param name"
+    },
+    {
+      "label": "Single-layer LSTM cell with BPTT using a concatenated weight matrix.      Gate o",
+      "file_type": "rationale",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L98",
+      "id": "neural_engine_lstm_cell_rationale_98",
+      "community": 1,
+      "norm_label": "single-layer lstm cell with bptt using a concatenated weight matrix.      gate o"
+    },
+    {
+      "label": "Full sequence forward pass.          Args:             X_seq: Input sequence, sh",
+      "file_type": "rationale",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L123",
+      "id": "neural_engine_lstm_cell_rationale_123",
+      "community": 3,
+      "norm_label": "full sequence forward pass.          args:             x_seq: input sequence, sh"
+    },
+    {
+      "label": "Backpropagation through time.          Args:             dL_dall_h: Gradient of",
+      "file_type": "rationale",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L179",
+      "id": "neural_engine_lstm_cell_rationale_179",
+      "community": 1,
+      "norm_label": "backpropagation through time.          args:             dl_dall_h: gradient of"
+    },
+    {
+      "label": "Apply optimizer step to weights.          Args:             grads:     Gradient",
+      "file_type": "rationale",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L240",
+      "id": "neural_engine_lstm_cell_rationale_240",
+      "community": 1,
+      "norm_label": "apply optimizer step to weights.          args:             grads:     gradient"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "neural_engine/__init__.py",
+      "source_location": "L1",
+      "id": "neural_engine_init_py",
+      "community": 10,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "prediction_head.py",
+      "file_type": "code",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L1",
+      "id": "neural_engine_prediction_head_py",
+      "community": 6,
+      "norm_label": "prediction_head.py"
+    },
+    {
+      "label": "PredictionHead",
+      "file_type": "code",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L13",
+      "id": "neural_engine_prediction_head_predictionhead",
+      "community": 4,
+      "norm_label": "predictionhead"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L23",
+      "id": "neural_engine_prediction_head_predictionhead_init",
+      "community": 2,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".forward()",
+      "file_type": "code",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L30",
+      "id": "neural_engine_prediction_head_predictionhead_forward",
+      "community": 4,
+      "norm_label": ".forward()"
+    },
+    {
+      "label": ".loss()",
+      "file_type": "code",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L44",
+      "id": "neural_engine_prediction_head_predictionhead_loss",
+      "community": 7,
+      "norm_label": ".loss()"
+    },
+    {
+      "label": ".backward()",
+      "file_type": "code",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L56",
+      "id": "neural_engine_prediction_head_predictionhead_backward",
+      "community": 8,
+      "norm_label": ".backward()"
+    },
+    {
+      "label": "PredictionHead \u2014 temporal regression module (Module C) \u2014 numpy only.",
+      "file_type": "rationale",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L1",
+      "id": "neural_engine_prediction_head_rationale_1",
+      "community": 6,
+      "norm_label": "predictionhead \u2014 temporal regression module (module c) \u2014 numpy only."
+    },
+    {
+      "label": "Regression head that predicts steps to next micro-stop.      Uses a single linea",
+      "file_type": "rationale",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L14",
+      "id": "neural_engine_prediction_head_rationale_14",
+      "community": 4,
+      "norm_label": "regression head that predicts steps to next micro-stop.      uses a single linea"
+    },
+    {
+      "label": "Compute predicted steps to next micro-stop.          Args:             context:",
+      "file_type": "rationale",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L31",
+      "id": "neural_engine_prediction_head_rationale_31",
+      "community": 4,
+      "norm_label": "compute predicted steps to next micro-stop.          args:             context:"
+    },
+    {
+      "label": "Compute MSE loss.          Args:             pred:   Predicted steps, shape (bat",
+      "file_type": "rationale",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L45",
+      "id": "neural_engine_prediction_head_rationale_45",
+      "community": 7,
+      "norm_label": "compute mse loss.          args:             pred:   predicted steps, shape (bat"
+    },
+    {
+      "label": "Backpropagate MSE loss, update weights via Adam, and return upstream gradient.",
+      "file_type": "rationale",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L57",
+      "id": "neural_engine_prediction_head_rationale_57",
+      "community": 8,
+      "norm_label": "backpropagate mse loss, update weights via adam, and return upstream gradient."
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "neural_engine_attention_py",
+      "target": "neural_engine_attention_attention",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "neural_engine_attention_rationale_1",
+      "target": "neural_engine_attention_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "neural_engine_attention_attention",
+      "target": "neural_engine_attention_attention_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "neural_engine_attention_attention",
+      "target": "neural_engine_attention_attention_forward",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "neural_engine_attention_attention",
+      "target": "neural_engine_attention_attention_backward",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "neural_engine_attention_rationale_14",
+      "target": "neural_engine_attention_attention",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "source": "neural_engine_attention_attention",
+      "target": "neural_engine_lstm_cell_adamoptimizer",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "neural_engine_attention_attention_init",
+      "target": "neural_engine_lstm_cell_adamoptimizer"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "neural_engine_attention_rationale_28",
+      "target": "neural_engine_attention_attention_forward",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "neural_engine_attention_attention_forward",
+      "target": "neural_engine_lstm_cell_softmax"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/attention.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "neural_engine_attention_rationale_49",
+      "target": "neural_engine_attention_attention_backward",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_py",
+      "target": "neural_engine_lstm_cell_sigmoid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_py",
+      "target": "neural_engine_lstm_cell_softmax",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_py",
+      "target": "neural_engine_lstm_cell_adamoptimizer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_py",
+      "target": "neural_engine_lstm_cell_lstmcell",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_rationale_1",
+      "target": "neural_engine_lstm_cell_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_lstmcell_forward",
+      "target": "neural_engine_lstm_cell_sigmoid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_rationale_11",
+      "target": "neural_engine_lstm_cell_sigmoid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_rationale_24",
+      "target": "neural_engine_lstm_cell_softmax",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_adamoptimizer",
+      "target": "neural_engine_lstm_cell_adamoptimizer_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_adamoptimizer",
+      "target": "neural_engine_lstm_cell_adamoptimizer_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_rationale_42",
+      "target": "neural_engine_lstm_cell_adamoptimizer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "source": "neural_engine_prediction_head_predictionhead",
+      "target": "neural_engine_lstm_cell_adamoptimizer",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "neural_engine_prediction_head_predictionhead_init",
+      "target": "neural_engine_lstm_cell_adamoptimizer"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_rationale_67",
+      "target": "neural_engine_lstm_cell_adamoptimizer_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_lstmcell",
+      "target": "neural_engine_lstm_cell_lstmcell_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L122",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_lstmcell",
+      "target": "neural_engine_lstm_cell_lstmcell_forward",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L178",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_lstmcell",
+      "target": "neural_engine_lstm_cell_lstmcell_backward",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L239",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_lstmcell",
+      "target": "neural_engine_lstm_cell_lstmcell_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_rationale_98",
+      "target": "neural_engine_lstm_cell_lstmcell",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_rationale_123",
+      "target": "neural_engine_lstm_cell_lstmcell_forward",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L179",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_rationale_179",
+      "target": "neural_engine_lstm_cell_lstmcell_backward",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/lstm_cell.py",
+      "source_location": "L240",
+      "weight": 1.0,
+      "source": "neural_engine_lstm_cell_rationale_240",
+      "target": "neural_engine_lstm_cell_lstmcell_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "neural_engine_prediction_head_py",
+      "target": "neural_engine_prediction_head_predictionhead",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "neural_engine_prediction_head_rationale_1",
+      "target": "neural_engine_prediction_head_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "neural_engine_prediction_head_predictionhead",
+      "target": "neural_engine_prediction_head_predictionhead_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "neural_engine_prediction_head_predictionhead",
+      "target": "neural_engine_prediction_head_predictionhead_forward",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "neural_engine_prediction_head_predictionhead",
+      "target": "neural_engine_prediction_head_predictionhead_loss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "neural_engine_prediction_head_predictionhead",
+      "target": "neural_engine_prediction_head_predictionhead_backward",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "neural_engine_prediction_head_rationale_14",
+      "target": "neural_engine_prediction_head_predictionhead",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "neural_engine_prediction_head_rationale_31",
+      "target": "neural_engine_prediction_head_predictionhead_forward",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "neural_engine_prediction_head_rationale_45",
+      "target": "neural_engine_prediction_head_predictionhead_loss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "neural_engine/prediction_head.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "neural_engine_prediction_head_rationale_57",
+      "target": "neural_engine_prediction_head_predictionhead_backward",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "fac04f81129b1a2d5a61160eca852b6dd9eca8ff"
+}
