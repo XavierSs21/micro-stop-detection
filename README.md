@@ -167,23 +167,167 @@ Singleton interno: `_lstm` + `_attention` se instancian al importar.
 
 ---
 
-## Setup
+## Instalación y ejecución
+
+### Requisitos previos
+
+- **Python 3.10 o superior** instalado y disponible en el PATH.
+- **Git** para clonar el repositorio.
+
+Verifica tu versión de Python:
+
+```bash
+# Linux / macOS
+python3 --version
+
+# Windows (PowerShell o CMD)
+python --version
+```
+
+---
+
+### Linux / macOS
+
+#### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/xavierss21/micro-stop-detection.git
+cd micro-stop-detection
+```
+
+#### 2. Crear y activar el entorno virtual
 
 ```bash
 python3 -m venv .venv
-.venv/bin/pip install numpy matplotlib pandas jupyter nbformat pytest
+source .venv/bin/activate
 ```
 
-`pandas` se usa solo dentro de los notebooks (carga del CSV). `matplotlib` se
-usa solo en notebooks; dentro de `src/` está restringido.
+#### 3. Instalar dependencias
+
+```bash
+pip install numpy matplotlib pandas jupyter nbformat pytest
+```
+
+#### 4. Ejecutar los tests
+
+```bash
+PYTHONPATH=src pytest tests/test_neural_engine.py -v
+```
+
+Los 8 tests deben aparecer en verde.
+
+#### 5. Generar el dataset y entrenar el modelo
+
+```bash
+jupyter notebook notebook/dataset.ipynb
+```
+
+Dentro del notebook, ejecuta **todas las celdas** (menú *Kernel → Restart & Run All*).  
+Esto genera:
+- `data/industrial_dataset.csv` — 20 000 muestras × 6 columnas.
+- `weights/pesos_modelo.npy` — pesos entrenados del modelo completo.
+
+#### 6. Ver los resultados y métricas
+
+```bash
+# Visualizaciones principales
+jupyter notebook notebook/views.ipynb
+
+# Evaluación con el modelo real (carga los pesos de weights/)
+jupyter notebook notebook/views2.ipynb
+```
+
+Ejecuta todas las celdas de cada notebook para obtener las gráficas y métricas.
+
+---
+
+### Windows
+
+#### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/xavierss21/micro-stop-detection.git
+cd micro-stop-detection
+```
+
+#### 2. Crear y activar el entorno virtual
+
+```powershell
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+> Si ves un error de política de ejecución en PowerShell, ejecuta primero:
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+
+#### 3. Instalar dependencias
+
+```powershell
+pip install numpy matplotlib pandas jupyter nbformat pytest
+```
+
+#### 4. Ejecutar los tests
+
+```powershell
+$env:PYTHONPATH="src"
+pytest tests/test_neural_engine.py -v
+```
+
+Alternativa en CMD:
+
+```cmd
+set PYTHONPATH=src
+pytest tests\test_neural_engine.py -v
+```
+
+Los 8 tests deben aparecer en verde.
+
+#### 5. Generar el dataset y entrenar el modelo
+
+```powershell
+jupyter notebook notebook\dataset.ipynb
+```
+
+Dentro del notebook, ejecuta **todas las celdas** (menú *Kernel → Restart & Run All*).  
+Esto genera:
+- `data\industrial_dataset.csv` — 20 000 muestras × 6 columnas.
+- `weights\pesos_modelo.npy` — pesos entrenados del modelo completo.
+
+#### 6. Ver los resultados y métricas
+
+```powershell
+# Visualizaciones principales
+jupyter notebook notebook\views.ipynb
+
+# Evaluación con el modelo real (carga los pesos de weights\)
+jupyter notebook notebook\views2.ipynb
+```
+
+Ejecuta todas las celdas de cada notebook para obtener las gráficas y métricas.
+
+---
+
+### Resumen del flujo completo
+
+```
+1. Instalar dependencias   →  pip install ...
+2. Verificar la lógica     →  pytest tests/test_neural_engine.py -v   (8/8 ✓)
+3. Crear datos y entrenar  →  dataset.ipynb  (genera CSV + pesos_modelo.npy)
+4. Analizar resultados     →  views.ipynb  /  views2.ipynb
+```
+
+---
+
+### Notas sobre dependencias
+
+`pandas` se usa solo dentro de los notebooks para cargar el CSV.  
+`matplotlib` se usa solo en notebooks; dentro de `src/` está restringido.
 
 ---
 
 ## Tests
-
-```bash
-PYTHONPATH=src .venv/bin/python3 -m pytest tests/test_neural_engine.py -v
-```
 
 | Test | Verifica |
 |------|---------|
@@ -203,11 +347,14 @@ Los 8 tests deben pasar en verde en todo momento.
 ## Dataset y entrenamiento
 
 ```bash
-.venv/bin/jupyter notebook notebook/dataset.ipynb
-# Ejecutar todas las celdas
+# Linux / macOS
+jupyter notebook notebook/dataset.ipynb
+
+# Windows
+jupyter notebook notebook\dataset.ipynb
 ```
 
-Esto genera:
+Ejecutar todas las celdas genera:
 - `data/industrial_dataset.csv` (20 000 muestras × 6 columnas).
 - `weights/pesos_modelo.npy` con los pesos entrenados.
 
