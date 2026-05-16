@@ -17,3 +17,4 @@ weights/*.npy
 CLAUDE.md
 .skills/
 graphify-out/
+.refactor/

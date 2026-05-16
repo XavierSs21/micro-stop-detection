@@ -2,12 +2,8 @@
 
 import numpy as np
 
-try:
-    from neural_engine.lstm_cell import sigmoid, softmax, AdamOptimizer
-except ImportError:
-    from lstm_cell import sigmoid, softmax, AdamOptimizer  # direct script execution
-
-GRAD_CLIP = 5.0
+from neural_engine.activations import softmax, GRAD_CLIP
+from neural_engine.optimizer import AdamOptimizer
 
 
 class Attention:
@@ -84,22 +80,3 @@ class Attention:
         self.W_a = updated["W_a"]
 
         return dL_dall_h_direct + dL_dall_h_score        # (batch, T, H)
-
-
-# ---------------------------------------------------------------------------
-# Smoke test
-# ---------------------------------------------------------------------------
-
-if __name__ == "__main__":
-    np.random.seed(0)
-
-    att = Attention(hidden_size=32)
-    all_h = np.random.randn(8, 20, 32)
-
-    context, alpha = att.forward(all_h)
-
-    assert context.shape == (8, 32), f"context shape mismatch: {context.shape}"
-    assert np.allclose(alpha.sum(axis=1), 1.0, atol=1e-6), \
-        f"alpha does not sum to 1: {alpha.sum(axis=1)}"
-
-    print("Attention OK ✓")

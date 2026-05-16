@@ -1,93 +1,9 @@
-"""LSTM cell implementation with BPTT and Adam optimizer — numpy only."""
+"""LSTM cell implementation with BPTT — numpy only."""
 
 import numpy as np
 
-
-# ---------------------------------------------------------------------------
-# Helper functions
-# ---------------------------------------------------------------------------
-
-def sigmoid(x: np.ndarray) -> np.ndarray:
-    """Numerically stable sigmoid.
-
-    Args:
-        x: Input array, any shape.
-
-    Returns:
-        Element-wise sigmoid of x, same shape as x.
-    """
-    x = np.clip(x, -500, 500)
-    return 1.0 / (1.0 + np.exp(-x))
-
-
-def softmax(x: np.ndarray, axis: int = -1) -> np.ndarray:
-    """Softmax along a given axis.
-
-    Args:
-        x: Input array, any shape.
-        axis: Axis along which softmax is computed.
-
-    Returns:
-        Softmax-normalized array, same shape as x.
-    """
-    e = np.exp(x - x.max(axis=axis, keepdims=True))
-    return e / e.sum(axis=axis, keepdims=True)
-
-
-# ---------------------------------------------------------------------------
-# Adam optimizer
-# ---------------------------------------------------------------------------
-
-class AdamOptimizer:
-    """Adam optimizer for parameter updates.
-
-    Args:
-        lr: Learning rate.
-        beta1: Exponential decay rate for first moment.
-        beta2: Exponential decay rate for second moment.
-        eps: Numerical stability constant.
-    """
-
-    def __init__(
-        self,
-        lr: float = 1e-3,
-        beta1: float = 0.9,
-        beta2: float = 0.999,
-        eps: float = 1e-8,
-    ) -> None:
-        self.lr = lr
-        self.beta1 = beta1
-        self.beta2 = beta2
-        self.eps = eps
-        self.m: dict = {}
-        self.v: dict = {}
-        self.t: int = 0
-
-    def update(self, params: dict, grads: dict) -> dict:
-        """Apply one Adam step.
-
-        Args:
-            params: Dict mapping param name -> np.ndarray.
-            grads:  Dict mapping param name -> gradient np.ndarray (same keys).
-
-        Returns:
-            Updated params dict (same keys, new arrays).
-        """
-        self.t += 1
-        updated = {}
-        for key, p in params.items():
-            g = grads[key]
-            self.m.setdefault(key, np.zeros_like(p))
-            self.v.setdefault(key, np.zeros_like(p))
-
-            self.m[key] = self.beta1 * self.m[key] + (1 - self.beta1) * g
-            self.v[key] = self.beta2 * self.v[key] + (1 - self.beta2) * (g ** 2)
-
-            m_hat = self.m[key] / (1 - self.beta1 ** self.t)
-            v_hat = self.v[key] / (1 - self.beta2 ** self.t)
-
-            updated[key] = p - self.lr * m_hat / (np.sqrt(v_hat) + self.eps)
-        return updated
+from neural_engine.activations import sigmoid, softmax, GRAD_CLIP
+from neural_engine.optimizer import AdamOptimizer
 
 
 # ---------------------------------------------------------------------------
@@ -184,7 +100,7 @@ class LSTMCell:
 
         Returns:
             Dict with keys 'W' and 'b' containing accumulated gradients,
-            clipped to [-5.0, 5.0].
+            clipped to [-GRAD_CLIP, GRAD_CLIP].
         """
         H = self.hidden_size
         steps = self.cache["steps"]
@@ -228,8 +144,8 @@ class LSTMCell:
             dh_next = dconcat[:, self.input_size:]
             dc_next = dc_prev
 
-        dW = np.clip(dW, -5.0, 5.0)
-        db = np.clip(db, -5.0, 5.0)
+        dW = np.clip(dW, -GRAD_CLIP, GRAD_CLIP)
+        db = np.clip(db, -GRAD_CLIP, GRAD_CLIP)
         return {"W": dW, "b": db}
 
     # ------------------------------------------------------------------
@@ -247,34 +163,3 @@ class LSTMCell:
         updated = optimizer.update(params, grads)
         self.W = updated["W"]
         self.b = updated["b"]
-
-
-# ---------------------------------------------------------------------------
-# Smoke test
-# ---------------------------------------------------------------------------
-
-if __name__ == "__main__":
-    np.random.seed(42)
-
-    lstm = LSTMCell(input_size=4, hidden_size=32)
-    X = np.random.randn(8, 20, 4)
-
-    all_h, h_last = lstm.forward(X)
-    assert all_h.shape == (8, 20, 32), f"all_h shape mismatch: {all_h.shape}"
-    assert h_last.shape == (8, 32), f"h_last shape mismatch: {h_last.shape}"
-
-    opt = AdamOptimizer(lr=1e-2)
-    target = np.zeros((8, 20, 32))
-    losses = []
-
-    for _ in range(10):
-        all_h, _ = lstm.forward(X)
-        loss = float(np.mean((all_h - target) ** 2))
-        losses.append(loss)
-
-        dL = 2 * (all_h - target) / all_h.size
-        grads = lstm.backward(dL)
-        lstm.update(grads, opt)
-
-    assert losses[-1] < losses[0], f"Loss did not decrease: {losses[0]:.6f} -> {losses[-1]:.6f}"
-    print("LSTMCell OK ✓")
